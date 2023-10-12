@@ -1,23 +1,70 @@
-import logo from './logo.svg';
-import './App.css';
+import { CircularProgress, Slide, TextField } from "@mui/material";
+import { useWeatherContext } from './context/WheaterContext';
+import "./App.css";
 
 function App() {
+  const {
+    setCityName,
+    inputText,
+    setInputText,
+    data,
+    error,
+    loading,
+  } = useWeatherContext();
+
+  const handleSearch = (e) => {
+    if (e.key === 'Enter') {
+      setCityName(e.target.value);
+      setInputText('');
+    }
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="bg_img">
+      {!loading ? (
+        <>
+          <TextField
+            variant="filled"
+            label="Search location"
+            className="input"
+            error={error}
+            value={inputText}
+            onChange={(e) => setInputText(e.target.value)}
+            onKeyDown={handleSearch}
+          />
+          <h1 className="city">{data.name}</h1>
+          <div className="group">
+            <img
+              src={`http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}
+              alt=""
+            />
+            <h1>{data.weather[0].main}</h1>
+          </div>
+
+          <h1 className="temp">{data.main.temp.toFixed()} °C</h1>
+
+          <Slide direction="right" timeout={800} in={!loading}>
+            <div className="box_container">
+              <div className="box">
+                <p>Humidity</p>
+                <h1>{data.main.humidity.toFixed()}%</h1>
+              </div>
+
+              <div className="box">
+                <p>Wind</p>
+                <h1>{data.wind.speed.toFixed()} km/h</h1>
+              </div>
+
+              <div className="box">
+                <p>Feels Like</p>
+                <h1>{data.main.feels_like.toFixed()} °C</h1>
+              </div>
+            </div>
+          </Slide>
+        </>
+      ) : (
+        <CircularProgress />
+      )}
     </div>
   );
 }
