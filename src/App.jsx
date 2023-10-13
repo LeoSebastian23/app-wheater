@@ -1,5 +1,6 @@
-import { CircularProgress, Slide, TextField } from "@mui/material";
+import { CircularProgress, Slide} from "@mui/material";
 import { useWeatherContext } from './context/WheaterContext';
+import CustomInput from './components/CustomInput';
 import "./App.css";
 
 function App() {
@@ -8,7 +9,6 @@ function App() {
     inputText,
     setInputText,
     data,
-    error,
     loading,
   } = useWeatherContext();
 
@@ -23,11 +23,8 @@ function App() {
     <div className="bg_img">
       {!loading ? (
         <>
-          <TextField
-            variant="filled"
+         <CustomInput
             label="Search location"
-            className="input"
-            error={error}
             value={inputText}
             onChange={(e) => setInputText(e.target.value)}
             onKeyDown={handleSearch}
@@ -70,3 +67,4 @@ function App() {
 }
 
 export default App;
+
