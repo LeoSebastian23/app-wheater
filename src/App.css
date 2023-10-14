@@ -12,7 +12,8 @@ body {
 }
 
 .bg_img {
-  width: 100%;
+  margin-top: -30px; 
+  width: 100%; /*Ancho total*/
   min-height: 100vh;
   background: rgba(73,155,234,1);
   display: flex;
@@ -33,7 +34,7 @@ body {
 }
 
 .city {
-  margin-top: 2rem;
+  margin-top: rem;
 }
 
 .city,
@@ -80,17 +81,3 @@ body {
   }
 }
 
-.custom-input {
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  transition: border-color 0.3s;
-  color: #fff;
-  background-color: rgba(0, 0, 0, 0.75)
-}
-
-.custom-input:focus {
-  border-color: #007bff;
-  color: #fff
-}
