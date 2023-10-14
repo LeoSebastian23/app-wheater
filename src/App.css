@@ -81,3 +81,11 @@ body {
   }
 }
 
+.centered-image {
+  width: 30px; /* Ancho de la imagen */
+  height: 30px; /* Alto de la imagen */
+}
+
+.custom-button:hover {
+  background-color: #3cd6e7; /* Color de fondo al pasar el mouse por encima */
+}

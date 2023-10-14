@@ -13,6 +13,11 @@ function App() {
     loading,
   } = useWeatherContext();
 
+  const handleClick = () => {
+    setCityName(inputText); // Cambia el estado usando inputText
+    setInputText("");
+  }
+
   const handleSearch = (e) => {
     if (e.key === 'Enter') {
       setCityName(e.target.value);
@@ -29,6 +34,7 @@ function App() {
             value={inputText}
             onChange={(e) => setInputText(e.target.value)}
             onKeyDown={handleSearch}
+            onButtonClick={handleClick}
           />
           <HomeWheater
             data={data}
