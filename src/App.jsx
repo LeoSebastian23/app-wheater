@@ -1,8 +1,9 @@
 import { CircularProgress} from "@mui/material";
 import { useWeatherContext } from './context/WheaterContext';
 import CustomInput from './components/CustomInput';
-import "./App.css";
 import HomeWheater from "./components/HomeWheater";
+import "./App.css";
+
 
 function App() {
   const {
@@ -26,7 +27,7 @@ function App() {
   }
 
   return (
-    <div>
+    <div className="home">
       {!loading ? (
         <>
          <CustomInput

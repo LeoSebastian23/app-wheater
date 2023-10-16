@@ -3,13 +3,13 @@ import "../App.css";
 
 const CustomInput = ({ label, value, onChange, onKeyDown, onButtonClick }) => {
   return (
-    <nav className="navbar navbar-dark bg-dark justify-content-between">
+    <nav className="navbar navbar-dark justify-content-between" style={{background:"#010038", marginBottom:'10px'}}>
       <div className="p-2">
-        <a href="#" className="navbar-brand" >
+        <a href="#" className="navbar-brand" style={{fontSize:'25px'}}>
           <img
             src="./assets/clima.png"
-            width="30"
-            height="30"
+            width="40"
+            height="40"
             className="d-inline-block align-top"
             alt="Weather App Logo"
             style={{ marginRight: "10px" }}
@@ -27,7 +27,7 @@ const CustomInput = ({ label, value, onChange, onKeyDown, onButtonClick }) => {
           className="form-control mr-sm-2"
           style={{ marginRight: "10px" }}
         />
-        <button onClick={onButtonClick} className="btn btn-info" style={{ marginRight: "10px" }}>
+        <button onClick={onButtonClick} className="buttonSearch">
           <img src="assets/buscar.png" alt="Image" className="centered-image"/>
         </button>
       </div>

@@ -11,35 +11,64 @@ body {
   overflow-x: hidden;
 }
 
-.bg_img {
-  margin-top: -30px; 
+.home{
   width: 100%; /*Ancho total*/
   min-height: 100vh;
-  background: rgba(73,155,234,1);
+  background: #293A80;
+
+}
+.bg_img {
+  margin-top: 20px; 
+  padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   color: #fff;
+  border-radius: 20px;
 }
-
+.cardHome{
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 20px;
+}
 .group {
   display: flex;
   gap: 10px;
   align-items: center;
   margin: 1rem 0;
-  background-color: rgba(0, 0, 0, 0.30);
+  background-color: #ECECEC;
   border-radius: 12px;
   padding-right: 1rem;
+  color: #1d1c1c;
 }
 
 .city {
   margin-top: rem;
 }
+.city:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s;
+}
 
 .city,
 .temp {
   font-size: 3rem;
+}
+
+.temperature-min-max{
+  padding: 10px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #010038ef;
 }
 
 .box_container {
@@ -58,8 +87,16 @@ body {
   text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 5px;
   transition: transform 0.2s;
+}
+.inside-box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
 }
 
 .box:hover {
@@ -77,15 +114,34 @@ body {
 
   .box,
   .input {
-    width: 70vw;
+    width: 50vw;
+  }
+  .temperature-min-max{
+    flex-direction: column;
+  }
+  .navbar{
+    flex-direction: column;
   }
 }
 
+.buttonSearch{
+  margin-Right: 10px;
+  background:#F39422;
+  border-Radius:40px;
+  border: #1d1c1c 1px;
+}
+
+.buttonSearch:hover{
+  background-color: #facd94;
+  transform: scale(1.1);
+}
+
 .centered-image {
-  width: 30px; /* Ancho de la imagen */
-  height: 30px; /* Alto de la imagen */
+  width: 42px; /* Ancho de la imagen */
+  height: 42px; /* Alto de la imagen */
 }
 
 .custom-button:hover {
   background-color: #3cd6e7; /* Color de fondo al pasar el mouse por encima */
 }
+
