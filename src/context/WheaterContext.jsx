@@ -9,12 +9,13 @@ export function useWeatherContext() {
 export function WeatherProvider({ children }) {
   const [cityName, setCityName] = useState("Mar del plata");
   const [inputText, setInputText] = useState("");
-  const [data, setData] = useState({});
+  const [currentWeatherData, setCurrentWeatherData] = useState({});
+  const [forecastData, setForecastData] = useState({});
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true);
 
-
   useEffect(() => {
+    // Solicitud para obtener el clima actual
     fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${process.env.REACT_APP_API_KEY}&units=metric`
     )
@@ -27,7 +28,29 @@ export function WeatherProvider({ children }) {
         }
       })
       .then((data) => {
-        setData(data);
+        console.log("Current Weather Data:", data); // Agrega esta línea
+        setCurrentWeatherData(data);
+      })
+      .catch(() => setError(true))
+      .finally(() => setLoading(false));
+  }, [cityName, error]);
+
+  useEffect(() => {
+    // Solicitud para obtener el pronóstico de 5 días
+    fetch(
+      `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${process.env.REACT_APP_API_KEY}&units=metric`
+    )
+      .then((res) => {
+        if (res.status === 200) {
+          error && setError(false);
+          return res.json();
+        } else {
+          throw new Error("Something went wrong");
+        }
+      })
+      .then((data) => {
+        console.log("5-Day Forecast Data:", data); // Agrega esta línea
+        setForecastData(data);
       })
       .catch(() => setError(true))
       .finally(() => setLoading(false));
@@ -40,7 +63,8 @@ export function WeatherProvider({ children }) {
         setCityName,
         inputText,
         setInputText,
-        data,
+        currentWeatherData,
+        forecastData,
         error,
         loading,
       }}

@@ -1,21 +1,22 @@
-import { CircularProgress} from "@mui/material";
+import { CircularProgress } from "@mui/material";
 import { useWeatherContext } from './context/WheaterContext';
 import CustomInput from './components/CustomInput';
 import HomeWheater from "./components/HomeWheater";
+import FiveDayForecast from "./components/FiveDayForecast"; // Importa el nuevo componente
 import "./App.css";
-
 
 function App() {
   const {
     setCityName,
     inputText,
     setInputText,
-    data,
+    currentWeatherData, // Accede a los datos del clima actual
+    forecastData, // Accede a los datos del pronóstico de 5 días
     loading,
   } = useWeatherContext();
 
   const handleClick = () => {
-    setCityName(inputText); // Cambia el estado usando inputText
+    setCityName(inputText);
     setInputText("");
   }
 
@@ -30,7 +31,7 @@ function App() {
     <div className="home">
       {!loading ? (
         <>
-         <CustomInput
+          <CustomInput
             label="Search location"
             value={inputText}
             onChange={(e) => setInputText(e.target.value)}
@@ -38,8 +39,10 @@ function App() {
             onButtonClick={handleClick}
           />
           <HomeWheater
-            data={data}
-            loading={loading}
+            data={currentWeatherData} // Pasa los datos del clima actual
+          />
+          <FiveDayForecast
+            data={forecastData} // Pasa los datos del pronóstico de 5 días
           />
         </>
       ) : (
@@ -50,4 +53,5 @@ function App() {
 }
 
 export default App;
+
 

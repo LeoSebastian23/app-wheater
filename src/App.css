@@ -145,3 +145,46 @@ body {
   background-color: #3cd6e7; /* Color de fondo al pasar el mouse por encima */
 }
 
+.allWeek {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan a la siguiente línea si es necesario */
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: rgba(243, 149, 34, 0.98);
+}
+
+
+.allWeek:hover{
+  background-color: rgba(249, 137, 0, 0.98)
+}
+
+.card-title {
+  font-size: 20px;
+  margin-bottom: 10px;
+  
+}
+
+.card-text {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.data-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.data-card p {
+  margin-right: 10px;
+}
+
+.data-card img {
+  width: 40px;
+  height: 40px;
+}
