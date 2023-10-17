@@ -1,5 +1,6 @@
 import React from "react";
 
+
 const FiveDayForecast = ({ data }) => {
   if (!data || !data.list || data.list.length === 0) {
     return null; // Evita errores si no hay datos disponibles
@@ -12,7 +13,7 @@ const FiveDayForecast = ({ data }) => {
 
   return (
     <div className="container">
-      <div className="row">
+      <div>
         <h2 className="mt-4 mb-4">View all week</h2>
         {forecastItems.map((item, index) => {
           const date = new Date(item.dt * 1000).toLocaleDateString("en-US", {
@@ -31,16 +32,16 @@ const FiveDayForecast = ({ data }) => {
           daysShown[date] = true;
 
           return (
-            <div key={index} className="allWeek" style={{ display: "inline-block", margin: "10px" }}>
+            <div key={index} className="allWeek">
               <div className="card-body">
                 <h4 className="card-title">{date}</h4>
                 <p className="card-text">{weatherDescription}</p>
                 <div className="data-card">
-                  <p className="card-text">{item.main.temp.toFixed()} °C</p>
                   <img
                     src={`http://openweathermap.org/img/wn/${item.weather[0].icon}.png`}
                     alt="Weather Icon"
                   />
+                  <p className="card-text">{item.main.temp.toFixed()} °C</p>
                 </div>
               </div>
             </div>

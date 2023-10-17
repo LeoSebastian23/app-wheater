@@ -11,7 +11,7 @@ const containerStyles = {
 const HomeWeather = ({ data, loading }) => {
   return (
     <div className="bg_img" style={containerStyles}>
-      
+      <div className="bg-home">
         <h1 className="city">{data.name}</h1>
         <div className="group">
           <img
@@ -20,7 +20,7 @@ const HomeWeather = ({ data, loading }) => {
           />
           <h1>{data.weather[0].main}</h1>
         </div>
-    
+        </div>
       <div className="cardHome" style={{background:'#537EC5'}}>
         <h1 className="temp">{data.main.temp.toFixed()} °C</h1>
 

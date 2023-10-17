@@ -15,7 +15,6 @@ body {
   width: 100%; /*Ancho total*/
   min-height: 100vh;
   background: #293A80;
-
 }
 .bg_img {
   margin-top: 20px; 
@@ -27,8 +26,13 @@ body {
   color: #fff;
   border-radius: 20px;
 }
+.bg-home{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 .cardHome{
-  
   display: flex;
   justify-content: center;
   align-items: center;
@@ -112,6 +116,11 @@ body {
     flex-direction: column;
   }
 
+  .city{
+    font-size: x-large;
+    font-weight: bold;
+  }
+
   .box,
   .input {
     width: 50vw;
@@ -120,6 +129,13 @@ body {
     flex-direction: column;
   }
   .navbar{
+    flex-direction: column;
+  }
+  .allWeek {
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
   }
 }
@@ -146,38 +162,43 @@ body {
 }
 
 .allWeek {
-  display: flex;
+  display: inline-block;
   flex-direction: row;
   flex-wrap: wrap; /* Permite que los elementos se envuelvan a la siguiente línea si es necesario */
   justify-content: space-between;
   align-items: center;
   margin: 10px;
   padding: 10px;
-  border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: rgba(243, 149, 34, 0.98);
+  background-color: rgba(243, 149, 34, 0.98);  
 }
 
 
 .allWeek:hover{
-  background-color: rgba(249, 137, 0, 0.98)
+  background-color: rgba(249, 137, 0, 0.98);
+  transform: scale(1.1);
+  transition: transform 0.2s;
 }
 
 .card-title {
   font-size: 20px;
   margin-bottom: 10px;
-  
+  font-weight: bold;
 }
 
 .card-text {
   font-size: 16px;
   margin-bottom: 5px;
+  justify-content: center;
 }
 
 .data-card {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
+  background-color: rgb(170, 197, 59);
+  border-radius: 10px;
 }
 
 .data-card p {
@@ -187,4 +208,11 @@ body {
 .data-card img {
   width: 40px;
   height: 40px;
+}
+
+.forecast-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centrar verticalmente */
+  align-items: center; /* Centrar horizontalmente */
 }
