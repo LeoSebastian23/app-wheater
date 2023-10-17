@@ -11,13 +11,20 @@ body {
   overflow-x: hidden;
 }
 
-.home{
+.centered-horizontal {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.home {
   width: 100%; /*Ancho total*/
   min-height: 100vh;
-  background: #293A80;
+  background: #293a80;
 }
+
 .bg_img {
-  margin-top: 20px; 
+  margin-top: 20px;
   padding: 20px;
   display: flex;
   justify-content: center;
@@ -26,13 +33,15 @@ body {
   color: #fff;
   border-radius: 20px;
 }
-.bg-home{
+
+.bg-home {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-.cardHome{
+
+.cardHome {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,6 +50,7 @@ body {
   margin: 20px;
   border-radius: 20px;
 }
+
 .group {
   display: flex;
   gap: 10px;
@@ -55,6 +65,7 @@ body {
 .city {
   margin-top: rem;
 }
+
 .city:hover {
   transform: scale(1.1);
   transition: transform 0.2s;
@@ -65,7 +76,7 @@ body {
   font-size: 3rem;
 }
 
-.temperature-min-max{
+.temperature-min-max {
   padding: 10px;
   border-radius: 15px;
   display: flex;
@@ -94,7 +105,8 @@ body {
   gap: 5px;
   transition: transform 0.2s;
 }
-.inside-box{
+
+.inside-box {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -116,7 +128,7 @@ body {
     flex-direction: column;
   }
 
-  .city{
+  .city {
     font-size: x-large;
     font-weight: bold;
   }
@@ -125,29 +137,27 @@ body {
   .input {
     width: 50vw;
   }
-  .temperature-min-max{
+  .temperature-min-max {
     flex-direction: column;
   }
-  .navbar{
+  .navbar {
     flex-direction: column;
   }
   .allWeek {
     width: 50vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
   }
+
 }
 
-.buttonSearch{
-  margin-Right: 10px;
-  background:#F39422;
-  border-Radius:40px;
+.buttonSearch {
+  margin-right: 10px;
+  background: #f39422;
+  border-radius: 40px;
   border: #1d1c1c 1px;
 }
 
-.buttonSearch:hover{
+.buttonSearch:hover {
   background-color: #facd94;
   transform: scale(1.1);
 }
@@ -161,20 +171,25 @@ body {
   background-color: #3cd6e7; /* Color de fondo al pasar el mouse por encima */
 }
 
+.week {
+  background:#537EC5;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 10px;
+}
 .allWeek {
   display: inline-block;
   flex-direction: row;
-  flex-wrap: wrap; /* Permite que los elementos se envuelvan a la siguiente línea si es necesario */
+  flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
+  justify-items: center;
   margin: 10px;
   padding: 10px;
   border-radius: 5px;
-  background-color: rgba(243, 149, 34, 0.98);  
+  background-color: rgba(243, 149, 34, 0.98);
 }
 
-
-.allWeek:hover{
+.allWeek:hover {
   background-color: rgba(249, 137, 0, 0.98);
   transform: scale(1.1);
   transition: transform 0.2s;
@@ -213,6 +228,6 @@ body {
 .forecast-container {
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Centrar verticalmente */
   align-items: center; /* Centrar horizontalmente */
+  justify-content: center;
 }

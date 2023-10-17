@@ -42,7 +42,6 @@ function App() {
             data={currentWeatherData} // Pasa los datos del clima actual
           />
           <FiveDayForecast
-            className="forecast-container"
             data={forecastData} // Pasa los datos del pronóstico de 5 días
           />
         </>
