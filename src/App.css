@@ -61,6 +61,7 @@ body {
   background-color: #f39422;
   margin-right: 10px ;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top:20px ;
 }
 
 .temp {
@@ -70,6 +71,7 @@ body {
   padding: 10px;
   border-radius: 15px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top:20px ;
 }
 
 .group {
@@ -81,6 +83,7 @@ body {
   font-weight: bold;
   margin-left: 10px ;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top:20px ;
 }
 
 .weather-icon {
@@ -99,14 +102,19 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 16px;
-  background-color: #facd94;
   border-radius: 15px;
+  padding: 10px;
+  margin-top: 20px;
+  width: auto;
 }
 
 .min-max-temperature {
+  background-Color:#537EC5;
+  padding:10px;
+  color:hsl(208, 100%, 97%);
   margin: 0 10px;
+  border-radius: 15px;
 }
-
 /*---------------------------------------------------------*/
 .city:hover {
   transform: scale(1.04);
@@ -190,8 +198,24 @@ body {
     flex-direction: column;
   }
   .allWeek {
-    width: 50vw;
+    display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .week{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+  }
+
+  .card-body{
+    display:flex;
+    align-Items:center;
+    flex-direction: row;
+    align-items: center;
   }
 
 }

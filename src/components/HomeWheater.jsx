@@ -23,17 +23,15 @@ const HomeWeather = ({ data, loading }) => {
           <div className="weather-description">{data.weather[0].main}</div>
         </div>
       </div>
-      <div className="card-today">
         <div className="temperature-min-max">
           <h2 className="min-max-temperature">
             Min: {data.main.temp_min.toFixed()} °C
           </h2>
-          <h2 className="divider">-</h2>
+          <h2 className="divider"> </h2>
           <h2 className="min-max-temperature">
             Max: {data.main.temp_max.toFixed()} °C
           </h2>
         </div>
-      </div>
       <Slide direction="right" timeout={800} in={!loading}>
         <div className="box_container">
           <div className="box">
