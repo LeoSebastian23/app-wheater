@@ -12,10 +12,9 @@ const FiveDayForecast = ({ data }) => {
   const daysShown = {};
 
   return (
-    <div className="centered-horizontal">
     <div className="week">
       <div>
-        <h2 style={{display:"flex", alignItems:"center",justifyContent:"center",fontWeight:'bold'}}>View all week</h2>
+        <h1 style={{display:"flex", alignItems:"center",justifyContent:"center",fontWeight:'bold'}}>View all week</h1>
         {forecastItems.map((item, index) => {
           const date = new Date(item.dt * 1000).toLocaleDateString("en-US", {
             weekday: "short",
@@ -31,7 +30,6 @@ const FiveDayForecast = ({ data }) => {
 
           // Marcar el día como mostrado
           daysShown[date] = true;
-
           return (
             <div key={index} className="allWeek">
               <div className="card-body">
@@ -49,7 +47,6 @@ const FiveDayForecast = ({ data }) => {
           );
         })}
       </div>
-    </div>
     </div>
   );
 };

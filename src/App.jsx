@@ -2,18 +2,21 @@ import { CircularProgress } from "@mui/material";
 import { useWeatherContext } from './context/WheaterContext';
 import CustomInput from './components/CustomInput';
 import HomeWheater from "./components/HomeWheater";
-import FiveDayForecast from "./components/FiveDayForecast"; // Importa el nuevo componente
+import FiveDayForecast from "./components/FiveDayForecast";
 import "./App.css";
+import { useState } from 'react';
 
 function App() {
   const {
     setCityName,
     inputText,
     setInputText,
-    currentWeatherData, // Accede a los datos del clima actual
-    forecastData, // Accede a los datos del pronóstico de 5 días
+    currentWeatherData,
+    forecastData,
     loading,
   } = useWeatherContext();
+
+  const [showFiveDayForecast, setShowFiveDayForecast] = useState(false);
 
   const handleClick = () => {
     setCityName(inputText);
@@ -27,9 +30,15 @@ function App() {
     }
   }
 
+  const toggleFiveDayForecast = () => {
+    setShowFiveDayForecast(!showFiveDayForecast);
+  }
+
   return (
     <div className="home">
-      {!loading ? (
+      {loading ? (
+        <CircularProgress />
+      ) : (
         <>
           <CustomInput
             label="Search location"
@@ -38,20 +47,23 @@ function App() {
             onKeyDown={handleSearch}
             onButtonClick={handleClick}
           />
-          <HomeWheater
-            data={currentWeatherData} // Pasa los datos del clima actual
-          />
-          <FiveDayForecast
-            data={forecastData} // Pasa los datos del pronóstico de 5 días
-          />
+          {showFiveDayForecast ? (
+            <FiveDayForecast data={forecastData} />
+          ) : (
+            <HomeWheater data={currentWeatherData} />
+          )}
+          <button className='toggle-button' onClick={toggleFiveDayForecast}>
+            {showFiveDayForecast ? 'Hide Five-Day Forecast' : 'Show Five-Day Forecast'}
+          </button>
         </>
-      ) : (
-        <CircularProgress />
       )}
     </div>
   );
 }
 
 export default App;
+
+
+
 
 

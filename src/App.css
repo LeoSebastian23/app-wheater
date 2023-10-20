@@ -1,5 +1,7 @@
+/* Importación de fuente */
 @import url("https://fonts.googleapis.com/css2?family=Unbounded&display=swap");
 
+/* Configuración global */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -7,23 +9,31 @@
   font-family: "Unbounded", cursive;
 }
 
+/* Estilos para el cuerpo de la página */
 body {
   overflow-x: hidden;
+  margin: 0;
 }
 
 .centered-horizontal {
   display: flex;
-  justify-content: center;
-  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%; 
 }
 
 .home {
-  width: 100%; /*Ancho total*/
+  width: 100%;
   min-height: 100vh;
-  background: #293a80;
+  background-image: linear-gradient(to right top, #051937, #003f63, #006a8e, #0098b1, #21c7cd);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .bg_img {
+  width: 100%; 
   margin-top: 20px;
   padding: 20px;
   display: flex;
@@ -39,18 +49,6 @@ body {
   justify-content: center;
   text-align: center;
   width: auto;
-}
-
-.card-today {
-  background-color: #537EC5;
-  border-radius: 10px;
-  padding: 20px;
-  margin: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
 }
 
 .city {
@@ -109,7 +107,7 @@ body {
 }
 
 .min-max-temperature {
-  background-Color:#537EC5;
+  background-Color:#010038;
   padding:10px;
   color:hsl(208, 100%, 97%);
   margin: 0 10px;
@@ -141,7 +139,7 @@ body {
   padding: 1rem;
   border-radius: 12px;
   background-color: rgba(0, 0, 0, 0.75);
-  width: 220px;
+  width: 200px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -187,6 +185,7 @@ body {
     font-size: x-large;
     font-weight: bold;
   }
+
   .box,
   .input {
     width: 50vw;
@@ -197,27 +196,14 @@ body {
   .navbar {
     flex-direction: column;
   }
-  .allWeek {
+
+  .allWeek{
+    padding: 2rem 0;
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
+    flex-direction: column;
+    margin: auto 0;
   }
-
-  .week{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-  }
-
-  .card-body{
-    display:flex;
-    align-Items:center;
-    flex-direction: row;
-    align-items: center;
-  }
-
 }
 
 .buttonSearch {
@@ -241,22 +227,20 @@ body {
   background-color: #3cd6e7; /* Color de fondo al pasar el mouse por encima */
 }
 
-.week {
-  background:#537EC5;
-  margin: 10px;
-  padding: 20px;
-  border-radius: 10px;
+.week{
+  display: flex;
+  justify-content: center;
 }
 .allWeek {
   display: inline-block;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  justify-items: center;
   margin: 10px;
   padding: 10px;
   border-radius: 5px;
   background-color: rgba(243, 149, 34, 0.98);
+  width: 30%;
 }
 
 .allWeek:hover {
@@ -282,7 +266,7 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  background-color: rgb(170, 197, 59);
+  background-color:  rgba(127, 255, 212, 0.747);;
   border-radius: 10px;
 }
 
@@ -301,3 +285,20 @@ body {
   align-items: center; /* Centrar horizontalmente */
   justify-content: center;
 }
+
+/* Agrega estos estilos para estilizar el botón de cambio de vista */
+.toggle-button {
+  background: #f39422; /* Color de fondo del botón */
+  color: #1d1c1c; /* Color del texto del botón */
+  border-radius: 40px; /* Borde redondeado del botón */
+  padding: 10px 20px; /* Relleno interno del botón (ajusta según sea necesario) */
+  font-size: 16px; /* Tamaño de fuente del botón */
+  cursor: pointer; /* Cambia el cursor al pasar el mouse por encima */
+  margin: 10px; /* Margen alrededor del botón (ajusta según sea necesario) */
+}
+
+.toggle-button:hover {
+  background-color: #facd94; /* Color de fondo al pasar el mouse por encima */
+  transform: scale(1.1); /* Escala el botón ligeramente al pasar el mouse por encima */
+}
+
