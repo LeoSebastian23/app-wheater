@@ -5,19 +5,19 @@ const CustomInput = ({ label, value, onChange, onKeyDown, onButtonClick }) => {
   return (
     <nav className="navbar navbar-dark justify-content-between" style={{background:"#010038", marginBottom:'10px'}}>
       <div className="p-2">
-        <a href="#" className="navbar-brand" style={{fontSize:'25px'}}>
+        <div className="navbar-brand" style={{fontSize:'25px'}}>
           <img
-            src="./assets/clima.png"
+            src="./public/assets/clima.png"
             width="40"
             height="40"
             className="d-inline-block align-top"
-            alt="Weather App Logo"
+            alt="logo"
             style={{ marginRight: "10px" }}
           />
           WeatherApp
-        </a>
+        </div>
       </div>
-      <div class="d-flex">
+      <div className="d-flex">
         <input
           type="text"
           placeholder={label}
@@ -28,7 +28,7 @@ const CustomInput = ({ label, value, onChange, onKeyDown, onButtonClick }) => {
           style={{ marginRight: "10px" }}
         />
         <button onClick={onButtonClick} className="buttonSearch">
-          <img src="assets/buscar.png" alt="Image" className="centered-image"/>
+          <img src="assets/buscar.png" alt="vista" className="centered-image"/>
         </button>
       </div>
     </nav>

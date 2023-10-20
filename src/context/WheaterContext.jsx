@@ -28,7 +28,6 @@ export function WeatherProvider({ children }) {
         }
       })
       .then((data) => {
-        console.log("Current Weather Data:", data); // Agrega esta línea
         setCurrentWeatherData(data);
       })
       .catch(() => setError(true))
@@ -49,7 +48,6 @@ export function WeatherProvider({ children }) {
         }
       })
       .then((data) => {
-        console.log("5-Day Forecast Data:", data); // Agrega esta línea
         setForecastData(data);
       })
       .catch(() => setError(true))
