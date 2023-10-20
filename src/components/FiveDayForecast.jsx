@@ -13,7 +13,7 @@ const FiveDayForecast = ({ data }) => {
 
   return (
     <div className="week">
-      <div>
+      <div className="weekContainer">
         <h1 style={{display:"flex", alignItems:"center",justifyContent:"center",fontWeight:'bold'}}>View all week</h1>
         {forecastItems.map((item, index) => {
           const date = new Date(item.dt * 1000).toLocaleDateString("en-US", {
@@ -32,7 +32,6 @@ const FiveDayForecast = ({ data }) => {
           daysShown[date] = true;
           return (
             <div key={index} className="allWeek">
-              <div className="card-body">
                 <h4 className="card-title">{date}</h4>
                 <p className="card-text">{weatherDescription}</p>
                 <div className="data-card">
@@ -43,7 +42,7 @@ const FiveDayForecast = ({ data }) => {
                   <p className="card-text">{item.main.temp.toFixed()} °C</p>
                 </div>
               </div>
-            </div>
+
           );
         })}
       </div>

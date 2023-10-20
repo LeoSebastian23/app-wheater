@@ -7,7 +7,7 @@ const CustomInput = ({ label, value, onChange, onKeyDown, onButtonClick }) => {
       <div className="p-2">
         <div className="navbar-brand" style={{fontSize:'25px'}}>
           <img
-            src="./public/assets/clima.png"
+            src="/assets/climaIcono.png"
             width="40"
             height="40"
             className="d-inline-block align-top"
@@ -28,7 +28,7 @@ const CustomInput = ({ label, value, onChange, onKeyDown, onButtonClick }) => {
           style={{ marginRight: "10px" }}
         />
         <button onClick={onButtonClick} className="buttonSearch">
-          <img src="assets/buscar.png" alt="vista" className="centered-image"/>
+          <img src="/assets/buscarIcono.png" alt="vista" className="centered-image"/>
         </button>
       </div>
     </nav>

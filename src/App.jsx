@@ -53,7 +53,7 @@ function App() {
             <HomeWheater data={currentWeatherData} />
           )}
           <button className='toggle-button' onClick={toggleFiveDayForecast}>
-            {showFiveDayForecast ? 'Hide Five-Day Forecast' : 'Show Five-Day Forecast'}
+            {showFiveDayForecast ? 'Details of today' : 'View all week'}
           </button>
         </>
       )}
