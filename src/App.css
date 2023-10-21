@@ -201,11 +201,15 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 80%;
+    width: 100%;
   }
 
   .allWeek{
-    width: 200px;
+      display:flex;
+      align-Items:center;
+      justify-Content:center;
+      overflow: hidden;
+      word-wrap: break-word;
   }
 }
 
@@ -235,15 +239,16 @@ body {
   justify-content: center;
 }
 .allWeek {
-  display: inline-block;
-  flex-direction: row;
-  flex-wrap: wrap;
+  display:flex;
+  align-Items:center;
+  overflow: hidden;
+  word-wrap: break-word;
   justify-content: space-between;
   margin: 10px;
   padding: 10px;
   border-radius: 5px;
   background-color: rgba(243, 149, 34, 0.98);
-  width: 30%;
+  width: 95%;
 }
 
 .allWeek:hover {
@@ -256,12 +261,12 @@ body {
   font-size: 20px;
   margin-bottom: 10px;
   font-weight: bold;
+  margin-right: 10px;
 }
 
 .card-text {
   font-size: 16px;
   margin-bottom: 5px;
-  justify-content: center;
 }
 
 .data-card {
@@ -271,6 +276,8 @@ body {
   justify-content: center;
   background-color:  rgba(127, 255, 212, 0.747);;
   border-radius: 10px;
+  margin-left: 10px;
+  width: 100px;
 }
 
 .data-card p {

@@ -55,7 +55,7 @@ function App() {
           <button className='toggle-button' onClick={toggleFiveDayForecast}>
             {showFiveDayForecast ? 'Details of today' : 'View all week'}
           </button>
-        </>
+        </> 
       )}
     </div>
   );
